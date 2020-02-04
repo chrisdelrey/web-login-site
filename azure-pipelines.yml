@@ -36,4 +36,8 @@ stages:
         dockerfile: $(dockerfilePath)
         tags: |
           $(tag)
-    
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Microsoft Partner Network(91d97c43-1935-487e-a91c-180e44264099)'
+        KeyVaultName: 'tenableCSKeyVault'
+        SecretsFilter: '*'
